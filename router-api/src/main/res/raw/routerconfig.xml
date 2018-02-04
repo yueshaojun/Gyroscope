@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<router>
+    <!--组件应该和view对应起来-->
+    <component name = "yueshaojun" path = "">
+        <action name = "yueshaojun"/>
+        <response path=""/>
+    </component>
+    <!--block 为可执行代码块，即依赖引用的代码块-->
+    <block name = "block1" path = "com.paic.crm.myapplication.TestClass">
+        <action name = "yueshaojun"/>
+    </block>
+    <!--provider 为服务提供方,即依赖的module-->
+    <provider name = "imProvider" path = "com.paic.crmimlib.serivce.CrmImManager">
+        <block name = "testbb">
+            <action name = "yueshaojun11"/>
+        </block>
+        <notification path = "com.paic.crmimlib.listener.OnNewMessageListener"/>
+    </provider>
+
+    <!--<provider name = "imProvider1" path = "com.paic.crmimlib.TestManager">-->
+        <!--<block name = "addPublicKey">-->
+            <!--<action name = "yueshaojun12"/>-->
+        <!--</block>-->
+        <!--<notification path = "com.paic.crmimlib.listener.OnIMConnectionListener"/>-->
+    <!--</provider>-->
+</router>
